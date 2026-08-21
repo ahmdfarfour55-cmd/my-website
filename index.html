@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>FAR4 Architecture Group | Mimari Tasarım, 3D Render & VR 360°</title>
+    <meta name="description" content="FAR 4 Architecture Group: İç mekan tasarımı, 3D mimari modelleme, fotogerçekçi görselleştirme (render) ve sanal tur (VR 360°) hizmetleri. Projelerinizi 3D ve VR ortamında deneyimleyin.">
+    <meta name="keywords" content="mimari tasarım, 3d modelleme, görselleştirme, render, VR 360, sanal tur, iç mekan tasarımı, peyzaj tasarımı, lumion render, architecture design, 3d rendering, تصميم معماري, إظهار معماري, جولة افتراضية">
+    <meta name="author" content="FAR 4 Architecture Group">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Hreflang Tags (Çok Dilli SEO) -->
+    <link rel="alternate" hreflang="tr" href="https://far4architecture.site/" />
+    <link rel="alternate" hreflang="en" href="https://far4architecture.site/#en" />
+    <link rel="alternate" hreflang="ar" href="https://far4architecture.site/#ar" />
+    <link rel="alternate" hreflang="x-default" href="https://far4architecture.site/" />
+    <link rel="canonical" href="https://far4architecture.site/">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
+
+    <!-- Social Media / Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://far4architecture.site/">
+    <meta property="og:title" content="FAR4 Architecture Group - Mimari Tasarım & VR 360°">
+    <meta property="og:description" content="İç mekan, peyzaj, 3D fotogerçekçi görselleştirme ve VR 360° sanal tur çözümleri. Projelerinizi hayata geçirelim.">
+    <meta property="og:image" content="https://kuula.co/share/collection/7MV9H?logo=1">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ArchitecturalFirm",
+      "name": "FAR 4 Architecture Group",
+      "image": "https://far4architecture.site/logo-Architecture-group.png",
+      "url": "https://far4architecture.site/",
+      "telephone": "+905316651694",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "TR"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/far4architecturegroup/",
+        "https://www.facebook.com/archahmetfarfur",
+        "https://tr.pinterest.com/ahmedfarfur/",
+        "https://www.tiktok.com/@far4architecturegroup",
+        "https://kuula.co/share/collection/7MV9H"
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS & Iconlar -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            teal: '#38B6BA',
+                            dark: '#0E4D64',
+                            deep: '#083344',
+                            light: '#E6F6F7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 min-h-screen flex flex-col" id="main-body">
+
+    <!-- Üst İletişim & Dil Barları (Mobil Uyumlu) -->
+    <div class="bg-brand-deep text-slate-200 text-xs py-2 px-4 md:px-6 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <div class="flex gap-3 sm:gap-4 text-[11px] sm:text-xs">
+            <a href="tel:+905316651694" class="hover:text-brand-teal transition"><i class="fa-solid fa-phone text-brand-teal mr-1"></i> +90 (531) 665 16 94</a>
+            <a href="mailto:info@far4architecture.site" class="hover:text-brand-teal transition"><i class="fa-solid fa-envelope text-brand-teal mr-1"></i> info@far4architecture.site</a>
+        </div>
+        
+        <div class="flex items-center gap-2 sm:gap-3 bg-brand-dark px-2.5 py-1 rounded-full border border-teal-800 text-white font-medium">
+            <button onclick="changeLanguage('tr')" id="btn-tr" class="flex items-center gap-1 opacity-100 font-bold transition">
+                <span class="fi fi-tr text-sm rounded-sm"></span>
+                <span class="text-[11px]">TR</span>
+            </button>
+            <span class="text-teal-600">|</span>
+            
+            <button onclick="changeLanguage('en')" id="btn-en" class="flex items-center gap-1 opacity-60 hover:opacity-100 transition">
+                <span class="fi fi-us text-sm rounded-sm"></span>
+                <span class="text-[11px]">EN</span>
+            </button>
+            <span class="text-teal-600">|</span>
+            
+            <button onclick="changeLanguage('ar')" id="btn-ar" class="flex items-center gap-1 opacity-60 hover:opacity-100 transition">
+                <svg class="w-4 h-3 rounded-sm shadow-sm inline-block" viewBox="0 0 720 480">
+                    <rect width="720" height="160" fill="#007A3D"/>
+                    <rect y="160" width="720" height="160" fill="#FFFFFF"/>
+                    <rect y="320" width="720" height="160" fill="#000000"/>
+                    <g fill="#D52B1E">
+                        <polygon points="216,210 223,230 245,230 227,242 234,262 216,250 198,262 205,242 187,230 209,230"/>
+                        <polygon points="360,210 367,230 389,230 371,242 378,262 360,250 342,262 349,242 331,230 353,230"/>
+                        <polygon points="504,210 511,230 533,230 515,242 522,262 504,250 486,262 493,242 475,230 497,230"/>
+                    </g>
+                </svg>
+                <span class="text-[11px]">العربية</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigasyon Menüsü -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <a href="#" onclick="showPage('home')" class="flex items-center gap-3">
+                <img src="logo-Architecture-group.png" alt="FAR 4 Architecture Group Logo" class="h-10 sm:h-12 w-auto object-contain">
+            </a>
+            
+            <!-- Masaüstü Menü -->
+            <ul class="hidden md:flex space-x-6 font-medium text-slate-600 rtl:space-x-reverse">
+                <li><button onclick="showPage('home')" class="hover:text-brand-teal py-1" data-i18n="nav_home">Anasayfa</button></li>
+                <li><button onclick="showPage('about')" class="hover:text-brand-teal py-1" data-i18n="nav_about">Hakkımızda</button></li>
+                <li><button onclick="showPage('services')" class="hover:text-brand-teal py-1" data-i18n="nav_services">Hizmetlerimiz</button></li>
+                <li><button onclick="showPage('gallery')" class="hover:text-brand-teal py-1" data-i18n="nav_gallery">Portfolio</button></li>
+                <li><button onclick="showPage('vr')" class="hover:text-brand-teal py-1 text-brand-teal font-bold flex items-center gap-1" data-i18n="nav_vr"><i class="fa-solid fa-vr-cardboard"></i> VR 360° Tour</button></li>
+                <li><button onclick="showPage('contact')" class="hover:text-brand-teal py-1" data-i18n="nav_contact">İletişim</button></li>
+            </ul>
+
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/905316651694" target="_blank" class="bg-brand-teal hover:bg-brand-dark text-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-2 transition">
+                    <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i> <span data-i18n="btn_whatsapp" class="hidden sm:inline">WhatsApp</span>
+                </a>
+                <!-- Mobil Hamburger Menü Butonu -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-slate-700 hover:text-brand-teal text-2xl p-1 focus:outline-none">
+                    <i class="fa-solid fa-bars" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobil Menü Açılır Alanı -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 font-medium text-slate-600 shadow-lg">
+            <button onclick="showPage('home')" class="block w-full text-left py-2 border-b border-slate-50 hover:text-brand-teal" data-i18n="nav_home">Anasayfa</button>
+            <button onclick="showPage('about')" class="block w-full text-left py-2 border-b border-slate-50 hover:text-brand-teal" data-i18n="nav_about">Hakkımızda</button>
+            <button onclick="showPage('services')" class="block w-full text-left py-2 border-b border-slate-50 hover:text-brand-teal" data-i18n="nav_services">Hizmetlerimiz</button>
+            <button onclick="showPage('gallery')" class="block w-full text-left py-2 border-b border-slate-50 hover:text-brand-teal" data-i18n="nav_gallery">Portfolio</button>
+            <button onclick="showPage('vr')" class="block w-full text-left py-2 border-b border-slate-50 text-brand-teal font-bold flex items-center gap-2" data-i18n="nav_vr"><i class="fa-solid fa-vr-cardboard"></i> VR 360° Tour</button>
+            <button onclick="showPage('contact')" class="block w-full text-left py-2 hover:text-brand-teal" data-i18n="nav_contact">İletişim</button>
+        </div>
+    </nav>
+
+    <!-- ANA İÇERİK -->
+    <main class="flex-grow">
+        
+        <!-- 1. ANASAYFA / HERO SECTION -->
+        <section id="page-home" class="page-content">
+            <div class="relative bg-brand-deep text-white py-20 sm:py-36 px-4 sm:px-6 bg-cover bg-center transition-all duration-700 shadow-inner" 
+                 style="background-image: linear-gradient(rgba(8, 51, 68, 0.75), rgba(8, 51, 68, 0.85)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80');">
+                
+                <div class="max-w-4xl mx-auto text-center relative z-10">
+                    <span class="text-brand-teal font-semibold uppercase tracking-widest text-xs md:text-sm bg-brand-deep/60 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full border border-teal-500/30 backdrop-blur-sm" data-i18n="hero_subtitle">
+                        İç Mekan, Peyzaj & 3D Görselleştirme Studio
+                    </span>
+                    
+                    <h1 class="text-2xl sm:text-4xl md:text-6xl font-extrabold mt-4 sm:mt-6 mb-4 sm:mb-6 leading-tight drop-shadow-md" data-i18n="hero_title">
+                        Fikirlerinizi Gerçekçi 3D & VR Tasarımlara Dönüştürüyoruz
+                    </h1>
+                    
+                    <p class="text-slate-200 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 max-w-2xl mx-auto font-light leading-relaxed drop-shadow" data-i18n="hero_desc">
+                        FAR 4 Architecture Group güvencesiyle konsept tasarımlar, iç mekan, peyzaj ve 360° Sanal Tur VR çözümleri.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                        <button onclick="showPage('gallery')" class="w-full sm:w-auto bg-brand-teal hover:bg-teal-500 text-white font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl transition-all duration-300 shadow-lg shadow-teal-500/20 hover:scale-105 text-sm sm:text-base" data-i18n="btn_explore">
+                            Projelerimizi İnceleyin
+                        </button>
+                        <button onclick="showPage('vr')" class="w-full sm:w-auto bg-brand-dark/80 backdrop-blur-md border border-brand-teal hover:bg-brand-teal text-white font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl transition-all duration-300 shadow-lg hover:scale-105 flex items-center justify-center gap-2 text-sm sm:text-base" data-i18n="btn_vr_hero">
+                            <i class="fa-solid fa-vr-cardboard text-lg"></i> 
+                            360° VR Turu Deneyimleyin
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proje Adımları -->
+            <div class="py-12 sm:py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark mb-8 sm:mb-10" data-i18n="process_title">Proje Sürecimiz</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-100 shadow-sm">
+                            <div class="w-12 h-12 bg-brand-teal text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">1</div>
+                            <h3 class="font-bold text-lg mb-2" data-i18n="step1_title">Konsept & Analiz</h3>
+                            <p class="text-xs text-slate-500" data-i18n="step1_desc">Müşteri talepleri ve mekan ihtiyaçlarının belirlenmesi.</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-100 shadow-sm">
+                            <div class="w-12 h-12 bg-brand-teal text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
+                            <h3 class="font-bold text-lg mb-2" data-i18n="step2_title">3D Modelleme</h3>
+                            <p class="text-xs text-slate-500" data-i18n="step2_desc">Mimari ve iç mekanın üç boyutlu ortamda kurgulanması.</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-100 shadow-sm">
+                            <div class="w-12 h-12 bg-brand-teal text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">3</div>
+                            <h3 class="font-bold text-lg mb-2" data-i18n="step3_title">Render & VR Tur</h3>
+                            <p class="text-xs text-slate-500" data-i18n="step3_desc">Fotogerçekçi detaylar ve interaktif 360° VR deneyimi.</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-100 shadow-sm">
+                            <div class="w-12 h-12 bg-brand-teal text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">4</div>
+                            <h3 class="font-bold text-lg mb-2" data-i18n="step4_title">Proje Teslimi</h3>
+                            <p class="text-xs text-slate-500" data-i18n="step4_desc">Uygulamaya hazır yüksek çözünürlüklü sunum görselleri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. HAKKIMIZDA -->
+        <section id="page-about" class="page-content hidden py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark mb-6 border-b-2 border-brand-teal pb-2 inline-block" data-i18n="about_title">Hakkımızda</h2>
+            <div class="grid md:grid-cols-2 gap-8 sm:gap-10 items-center mt-4 sm:mt-6">
+                <div>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4" data-i18n="about_p1">FAR 4 Architecture Group olarak, peyzaj mimarisi, iç mekan tasarımı ve 3D görselleştirme alanlarında estetik ile işlevselliği bir araya getiren özgün çözümler sunuyoruz.</p>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed" data-i18n="about_p2">Projelerinizi daha uygulama aşamasına geçmeden yüksek kaliteli 3D renderlar, 360 VR turlar ve detaylı mobilya/malzeme düzenlemeleriyle en üst standartlarda görselleştiriyoruz.</p>
+                </div>
+                <img src="B.jpeg" alt="Mimari Tasarım ve Görselleştirme" class="rounded-xl shadow-lg border-2 border-brand-teal/20 object-cover w-full h-64 sm:h-80">
+            </div>
+        </section>
+
+        <!-- 3. HİZMETLERİMİZ -->
+        <section id="page-services" class="page-content hidden py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark mb-8 border-b-2 border-brand-teal pb-2 inline-block" data-i18n="services_title">Hizmetlerimiz</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white p-4 rounded-xl shadow border border-slate-100 hover:border-brand-teal transition">
+                    <img src="0.jpg" alt="İç Mekan Tasarımı" class="rounded-lg h-48 w-full object-cover">
+                    <h3 class="font-bold text-lg sm:text-xl mt-4 text-brand-dark" data-i18n="serv_1_title">İç Mekan & Mobilya Tasarımı</h3>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-2" data-i18n="serv_1_desc">Lüks ve konforlu oturma alanları, özel tasarım ahşap kaplamalar ve aydınlatma konseptleri.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow border border-slate-100 hover:border-brand-teal transition">
+                    <img src="1.jpg" alt="3D Render Görselleştirme" class="rounded-lg h-48 w-full object-cover">
+                    <h3 class="font-bold text-lg sm:text-xl mt-4 text-brand-dark" data-i18n="serv_2_title">3D Fotogerçekçi Render</h3>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-2" data-i18n="serv_2_desc">Projenizin ışık, doku ve detaylarını birebir yansıtan yüksek çözünürlüklü 3D görseller.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow border border-slate-100 hover:border-brand-teal transition">
+                    <img src="A.jpeg" alt="Peyzaj Tasarımı" class="rounded-lg h-48 w-full object-cover">
+                    <h3 class="font-bold text-lg sm:text-xl mt-4 text-brand-dark" data-i18n="serv_3_title">Peyzaj & Dış Mekan Düzenleme</h3>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-2" data-i18n="serv_3_desc">Bahçe, park, villa çevresi ve açık alanlar için modern peyzaj mimarisi projeleri.</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow border border-slate-100 hover:border-brand-teal transition">
+                    <div class="relative h-48 rounded-lg overflow-hidden bg-brand-deep flex items-center justify-center">
+                        <i class="fa-solid fa-vr-cardboard text-5xl sm:text-6xl text-brand-teal opacity-80"></i>
+                    </div>
+                    <h3 class="font-bold text-lg sm:text-xl mt-4 text-brand-dark" data-i18n="serv_4_title">VR 360° Interaktif Sanal Tur</h3>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-2" data-i18n="serv_4_desc">Mekan içinde özgürce dolaşmanızı sağlayan panoramik VR 360 derece görselleştirme.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PORTFOLIO / GALERİ -->
+        <section id="page-gallery" class="page-content hidden py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark mb-8 border-b-2 border-brand-teal pb-2 inline-block" data-i18n="gallery_title">Proje & Render Portfolyomuz</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Albüm 1: Peyzaj -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-pointer border border-brand-teal/30 bg-white" onclick="openAlbum('landscape')">
+                    <div class="relative h-56 sm:h-64 overflow-hidden">
+                        <img src="A.jpeg" alt="Modern Konut & Peyzaj Projesi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                            <i class="fa-solid fa-images"></i> <span data-i18n="album_landscape_count">5 Görsel</span>
+                        </span>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="font-bold text-base sm:text-lg leading-tight" data-i18n="album_landscape_title">Modern Konut & Peyzaj Projesi</h3>
+                            <p class="text-xs text-slate-200 mt-1 flex items-center gap-1">
+                                <i class="fa-solid fa-folder-open text-brand-teal"></i> <span data-i18n="album_landscape_sub">Dış Cephe ve Peyzaj </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Albüm 2: Salon -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-pointer border border-brand-teal/30 bg-white" onclick="openAlbum('salon')">
+                    <div class="relative h-56 sm:h-64 overflow-hidden">
+                        <img src="1.jpg" alt="Lüks Salon Tasarım Projesi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                            <i class="fa-solid fa-images"></i> <span data-i18n="album_salon_count">5 Görsel</span>
+                        </span>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="font-bold text-base sm:text-lg leading-tight" data-i18n="album_salon_title">Lüks Salon Tasarım Projesi</h3>
+                            <p class="text-xs text-slate-200 mt-1 flex items-center gap-1">
+                                <i class="fa-solid fa-folder-open text-brand-teal"></i> <span data-i18n="album_salon_sub">İç Mekan Konsepti </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Albüm 3: Villa -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-md cursor-pointer border border-slate-100 bg-white" onclick="openAlbum('villa')">
+                    <div class="relative h-56 sm:h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Villa Projesi" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        <span class="absolute top-4 right-4 bg-brand-teal text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                            <i class="fa-solid fa-images"></i> 3 Görsel
+                        </span>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="font-bold text-base sm:text-lg leading-tight" data-i18n="album_villa_title">Lüks Villa & Havuz Projesi</h3>
+                            <p class="text-xs text-slate-200 mt-1 flex items-center gap-1">
+                                <i class="fa-solid fa-folder-open text-brand-teal"></i> <span data-i18n="album_villa_sub">Gündüz ve Gece Görünümleri</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. VR 360° TUR SAYFASI -->
+        <section id="page-vr" class="page-content hidden py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-10">
+                <span class="text-brand-teal font-semibold uppercase tracking-wider text-xs sm:text-sm" data-i18n="vr_subtitle">İnteraktif Sanal Tur Deneyimi</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-brand-dark mt-2" data-i18n="vr_title">360° VR Sanal Proje Gezintisi</h2>
+                <p class="text-slate-500 text-xs sm:text-sm max-w-2xl mx-auto mt-2 px-2" data-i18n="vr_desc">Projelerimizin içerisinde 360 derece özgürce gezinebilir, mekanın tüm açılarını detaylıca inceleyebilirsiniz.</p>
+            </div>
+
+            <div class="bg-white p-2 sm:p-6 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-200">
+                <div class="relative w-full h-[400px] sm:h-[600px] rounded-xl sm:rounded-2xl overflow-hidden bg-black">
+                    <iframe id="vr-iframe" src="https://kuula.co/share/collection/7MV9H?logo=1&info=1&logosize=200&fs=1&vr=1&zoom=1&autorotate=0.15&autopalt=1&thumbs=1&inst=0" class="w-full h-full border-0" allow="xr-spatial-tracking; gyroscope; accelerometer; magnetometer" allowfullscreen scrolling="no"></iframe>
+                </div>
+                <div class="mt-4 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-slate-500 px-2 gap-3 sm:gap-4">
+                    <div class="flex items-center gap-2 text-center md:text-left">
+                        <i class="fa-solid fa-up-down-left-right text-brand-teal shrink-0"></i>
+                        <span data-i18n="vr_instructions">Görüntüyü çevirmek için farenizi basılı tutarak sürükleyin veya parmağınızı kaydırın.</span>
+                    </div>
+                    <a href="https://kuula.co/share/collection/7MV9H?logo=1&info=1&logosize=200&fs=1&vr=1&zoom=1&autorotate=0.15&autopalt=1&thumbs=1&inst=0" target="_blank" class="w-full md:w-auto text-center justify-center bg-brand-teal hover:bg-brand-dark text-white px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition text-xs">
+                        <i class="fa-solid fa-up-right-from-square"></i> <span data-i18n="vr_fullscreen">Tam Ekran Aç</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. İLETİŞİM SAYFASI -->
+        <section id="page-contact" class="page-content hidden py-12 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-14 shadow-xl border border-slate-100/80 text-center">
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-brand-dark mb-3 tracking-tight" data-i18n="contact_card_title">Projelerinizi Birlikte Hayata Geçirelim</h2>
+                <p class="text-slate-500 text-xs sm:text-base max-w-xl mx-auto mb-8 sm:mb-10 leading-relaxed" data-i18n="contact_card_desc">Hayalinizdeki mimari, iç mekan ve peyzaj projeleriniz için bize ulaşın, size özel tasarımlar hazırlayalım.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+                    <a href="mailto:info@far4architecture.site" class="w-full sm:w-auto min-w-[240px] bg-slate-50 hover:bg-slate-100 border border-slate-200 text-brand-dark py-3 px-4 sm:px-6 rounded-xl flex items-center justify-center gap-3 transition shadow-sm font-semibold text-xs sm:text-sm">
+                        <div class="bg-brand-teal text-white p-2 rounded-lg flex items-center justify-center">
+                            <i class="fa-solid fa-envelope text-sm sm:text-base"></i>
+                        </div>
+                        <span class="truncate">info@far4architecture.site</span>
+                    </a>
+
+                    <a href="https://wa.me/905316651694" target="_blank" class="w-full sm:w-auto min-w-[240px] bg-slate-50 hover:bg-slate-100 border border-slate-200 text-brand-dark py-3 px-4 sm:px-6 rounded-xl flex items-center justify-center gap-3 transition shadow-sm font-semibold text-xs sm:text-sm">
+                        <div class="bg-teal-500 text-white p-2 rounded-lg flex items-center justify-center">
+                            <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
+                        </div>
+                        <span dir="ltr">+90 531 665 16 94</span>
+                    </a>
+                </div>
+
+                <div class="flex justify-center items-center gap-3 sm:gap-4 pt-2">
+                    <a href="https://tr.pinterest.com/ahmedfarfur/" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-100 hover:bg-red-50 text-slate-700 hover:text-red-600 flex items-center justify-center transition border border-slate-200 shadow-sm"><i class="fa-brands fa-pinterest-p text-base sm:text-lg"></i></a>
+                    <a href="https://www.tiktok.com/@far4architecturegroup" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-black flex items-center justify-center transition border border-slate-200 shadow-sm"><i class="fa-brands fa-tiktok text-base sm:text-lg"></i></a>
+                    <a href="https://www.facebook.com/archahmetfarfur" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-100 hover:bg-blue-50 text-slate-700 hover:text-blue-600 flex items-center justify-center transition border border-slate-200 shadow-sm"><i class="fa-brands fa-facebook-f text-base sm:text-lg"></i></a>
+                    <a href="https://www.instagram.com/far4architecturegroup/" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-100 hover:bg-pink-50 text-slate-700 hover:text-pink-600 flex items-center justify-center transition border border-slate-200 shadow-sm"><i class="fa-brands fa-instagram text-base sm:text-lg"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ALBÜM AÇILIR PENCERESİ (MODAL) -->
+    <div id="album-modal" class="fixed inset-0 bg-black/80 z-[90] hidden flex items-center justify-center p-3 sm:p-4 backdrop-blur-md" onclick="closeAlbumModal()">
+        <div class="bg-white w-full max-w-5xl max-h-[90vh] rounded-2xl p-4 sm:p-6 overflow-y-auto shadow-2xl relative" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-4 sm:mb-6 border-b pb-3 sm:pb-4">
+                <div>
+                    <h3 id="modal-album-title" class="text-lg sm:text-2xl font-bold text-brand-dark">Proje Detayları</h3>
+                    <p id="modal-album-desc" class="text-xs sm:text-sm text-slate-500">Görselleri büyütmek için üzerine tıklayın.</p>
+                </div>
+                <button onclick="closeAlbumModal()" class="text-slate-400 hover:text-slate-800 text-xl sm:text-2xl transition p-2"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="modal-album-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"></div>
+        </div>
+    </div>
+
+    <!-- TEKİL RESİM BÜYÜTME (FULLSCREEN MODAL) -->
+    <div id="single-modal" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-2 sm:p-4 backdrop-blur-sm" onclick="closeSingleModal()">
+        <button onclick="closeSingleModal()" class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white text-2xl sm:text-3xl hover:text-brand-teal transition z-10 p-2"><i class="fa-solid fa-xmark"></i></button>
+        <img id="single-modal-img" src="" alt="FAR 4 Render" class="max-w-full max-h-[90vh] rounded-lg sm:rounded-xl shadow-2xl object-contain border border-slate-700" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-deep text-slate-400 py-6 text-center text-xs sm:text-sm border-t border-brand-dark">
+        <p>&copy; 2026 FAR 4 ARCHITECTURE GROUP. <span data-i18n="footer_rights">Tüm hakları saklıdır.</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
